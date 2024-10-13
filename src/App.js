@@ -10,6 +10,7 @@ import 'typeface-roboto-mono';
 const Label = styled.label`
   display: block;
   margin-bottom: 5px;
+  
   color: #663399; /* Purple label color */
 `;
 
@@ -17,16 +18,16 @@ const InputField = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f2d7ff; /* Light purple background */
+  background-color: #e6dfdc; /* Light purple background */
   color: #663399; /* Purple text color */
 `;
 
 const Button = styled.button`
   padding: 10px 20px;
   background-color: #ff69b4; /* Pink button color */
-  color: white;
-  border: none;
-  border-radius: 5px;
+  color: solid white;
+  border: 5px;
+  border-radius: 7px;
   cursor: pointer;
 `;
 
@@ -41,26 +42,7 @@ const ResultText = styled.p`
   color: #663399; /* Purple result text color */
 `;
 
-const Heart = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: pink;
-  border-radius: 50%;
-  animation: float 5s infinite linear;
 
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-`;
 
 const AppContainer = styled.div`
   display: flex;
@@ -69,8 +51,9 @@ const AppContainer = styled.div`
   justify-content: center;
   height: 100vh;
   padding: 20px; /* Adjust padding as needed */
-  background-image: url('path/to/your/space-image.jpg');
   background-size: cover;
+  background-color: pink;
+  backgroud-image: url('')
   background-position: center;
   background-attachment: fixed;
   animation: shimmer 2s infinite linear;
@@ -122,15 +105,21 @@ function App() {
         <InputField type="text" value={name2} onChange={(e) => setName2(e.target.value)} />
       </InputContainer>
       <Button onClick={calculateLove}>
-        <FaHeart /> Calculate Love
+        <FaHeart /> ask T! <FaHeart />
       </Button>
       <ResultContainer>
         <ResultText>{result !== null && `Love Percentage: ${result}%`}</ResultText>
       </ResultContainer>
       <div style={{ position: 'relative' }}>
         {/* Create multiple Heart components to fill the background */}
-        <Heart />
-        <Heart />
+        
+        <FaHeart />
+        <FaHeart />
+        <FaHeart />
+        <FaHeart />
+        <FaHeart />
+        <FaHeart />
+        <FaHeart />
         {/* ... more Heart components */}
       </div>
     </AppContainer>
